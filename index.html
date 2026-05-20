@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wedding Day</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+background:#fff;
+font-family:sans-serif;
+text-align:center;
+color:#333;
+}
+
+.header{
+padding:60px 20px;
+background:#8b0000;
+color:white;
+}
+
+.header h1{
+font-size:45px;
+margin:0;
+}
+
+.header p{
+font-size:20px;
+margin-top:10px;
+}
+
+.section{
+padding:40px 20px;
+}
+
+.countdown{
+font-size:30px;
+font-weight:bold;
+margin-top:20px;
+color:#8b0000;
+}
+
+.btn{
+display:block;
+width:260px;
+margin:15px auto;
+padding:15px;
+background:#8b0000;
+color:white;
+text-decoration:none;
+border-radius:15px;
+font-size:18px;
+}
+
+.footer{
+margin-top:50px;
+padding:20px;
+background:#f3f3f3;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>
+Temurbek ❤️ Nodirabegim
+</h1>
+
+<p>
+15 Avgust 2026 | Soat 18:00
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>
+To‘y boshlanishiga:
+</h2>
+
+<div class="countdown" id="countdown">
+Loading...
+</div>
+
+<a class="btn" href="GOOGLE_MAP_LINK">
+📍 Google Map orqali borish
+</a>
+
+<a class="btn" href="YANDEX_MAP_LINK">
+📍 Yandex Map orqali borish
+</a>
+
+</div>
+
+<div class="footer">
+Sizni to‘yimizda kutib qolamiz ❤️
+</div>
+
+<script>
+
+const weddingDate = new Date("2026-08-15T18:00:00").getTime();
+
+setInterval(function(){
+
+const now = new Date().getTime();
+
+const distance = weddingDate - now;
+
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+const hours = Math.floor(
+(distance % (1000 * 60 * 60 * 24))
+/ (1000 * 60 * 60)
+);
+
+const minutes = Math.floor(
+(distance % (1000 * 60 * 60))
+/ (1000 * 60)
+);
+
+const seconds = Math.floor(
+(distance % (1000 * 60))
+/ 1000
+);
+
+document.getElementById("countdown").innerHTML =
+days + " kun " +
+hours + " soat " +
+minutes + " daqiqa " +
+seconds + " soniya";
+
+},1000);
+
+</script>
+
+</body>
+</html>
